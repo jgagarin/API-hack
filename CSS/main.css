@@ -10,6 +10,9 @@ html {
 body {
     width: 100%;
     font-size: 100%;
+    font-family: sans-serif;
+    background: #01b0f0;
+    -webkit-font-smoothing: antialiased;
 }
 .main {
     width: 60em;
@@ -18,16 +21,20 @@ body {
 }
 .main hr {
     width:25%;
+    border: solid 1px #ff358b;
 }
 .main-header{
     padding: 5em 0 2em;
+    color: #fff;
 }
 .main-header h1{
     font-size: 3em;
+    font-family: 'Chewy', sans-serif;
     text-align: center;
     margin-bottom: 0;
 }
 .main-header p {
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     margin-top: 2em;
 }
@@ -35,14 +42,25 @@ body {
     padding: 3em 0;
 }
 .input-search{
-  /*margin-left: 30em;*/
   margin: auto;    
   position: relative;
   height: 50px;
-  width: 25em;
-  border-radius: 25px;
-  border: 2px solid;
+  width: 40em;
+  border: 2px solid #Aeee00;
+  background: transparent;
   display: block;    
+}
+.input-submit{
+  display: block;
+  margin: 1.5em auto;
+  width: 40em;
+  border: none;
+  height: 50px;
+  background: #aeee00;
+  color: #333;        
+}
+.input-submit:hover{
+    cursor: pointer;
 }
 .btn-find{
   margin: 2em auto;
