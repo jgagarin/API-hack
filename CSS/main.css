@@ -59,7 +59,8 @@ body {
 .input-submit{
   display: block;
   margin: 1.5em auto;
-  width: 40em;
+  width: 22em;
+  font-size: 1.25em;
   border: none;
   height: 50px;
   background: #aeee00;
@@ -90,10 +91,7 @@ li i.fa-angle-left{
   font-size: 4em;
   position: relative;
   top: 2.5em;
-  border: 2px solid #000;
-  border-radius: 50%;
-  width: 1em;
-  height: 1em;
+  
 }
 li i.fa-angle-right{
   float: right;
