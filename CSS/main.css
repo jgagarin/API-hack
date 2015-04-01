@@ -23,6 +23,8 @@ body {
     width:25%;
     border: solid 1px #ff358b;
 }
+
+/* Header Styles */
 .main-header{
     padding: 5em 0 2em;
     color: #fff;
@@ -39,6 +41,9 @@ body {
     text-align: center;
     margin-top: 2em;
 }
+
+/* Find Section Styles */
+
 .find{
     padding: 3em 0;
 }
@@ -67,18 +72,32 @@ body {
     color: #fff;
     transition: background 1s ease-in-out;
 }
-.btn-find{
-  margin: 2em auto;
-  width: 5em;
-  height: 2em;
-  border-radius: 12px;
-  border: 0;
-  font-size: 1.2em;
-  padding: 0;
-  display: block;
-}
-.results ul {
+
+
+/* Results Section Styles */
+ul#results-list {
     list-style-type: none;
+    padding-top: 1em;
 }
     
+#results-list li figure {
+    margin: 0 auto;
+    width: 350px;
+}
 
+li i.fa-angle-left{
+  float: left;
+  font-size: 4em;
+  position: relative;
+  top: 2.5em;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+}
+li i.fa-angle-right{
+  float: right;
+  font-size: 4em;
+  top: -3.25em;
+  position: relative;
+}
