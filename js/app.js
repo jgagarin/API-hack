@@ -18,3 +18,24 @@ $(document).ready(function() {
 });
 
 
+function getPlaylist(userSearch){
+    
+    //parameters to be passed
+    var params = { q: userSearch, type: 'playlist' };
+    
+    //ajax request
+    
+    var results = $.ajax({
+        url: 'http://api.spotify.com/v1/search',
+        data: params,
+        dataType: "json",
+        type: "GET",
+    })
+    .done(function(results){
+        
+        console.log(results);
+    
+    });
+
+
+}
