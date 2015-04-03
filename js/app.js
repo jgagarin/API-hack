@@ -1,5 +1,6 @@
 //global variables
 var listCounter = 0;
+var listResults;
 
 $(document).ready(function() {
     
@@ -35,39 +36,50 @@ function getPlaylist(userSearch){
     .done(function(results){
         
         console.log(results);
+        //assign to global variable
+        listResults = results;
         
-        //playlist image
-        var playlistImage = results.playlists.items[listCounter].images[1].url;
-        
-        //playlist url
-        var playlistUrl = results.playlists.items[listCounter].external_urls.spotify;
-        
-        //playlist title
-        var playlistTitle = results.playlists.items[listCounter].name;
-        
-        //posting playlist to page
-        var imagePost = '<li><i class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i class="fa fa-angle-double-right"></i></li>';
-        $('#results-list').html(imagePost);
+        //show current playlist
+        showPlaylist();
     
     });
     
     
 }
 
+var showPlaylist = function(){
+    
+    var playlistImage = listResults.playlists.items[listCounter].images[1].url;
+        
+        //playlist url
+        var playlistUrl = listResults.playlists.items[listCounter].external_urls.spotify;
+        
+        //playlist title
+        var playlistTitle = listResults.playlists.items[listCounter].name;
+        
+        //posting playlist to page
+        var imagePost = '<li><i id="prev" class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i id="next" class="fa fa-angle-double-right"></i></li>';
+        $('#results-list').html(imagePost);
+    
+    
+    
+}
+
  var nextPlaylist = function(){
+     console.log('next playlist begin');
      
-        $("#next").click(function(){
+        $(document).on('click','#next', function(){
                 
             listCounter++;
-            getPlaylist();
-            console.log(listCounter);
+            showPlaylist();
+            
         
         });
-        $("#prev").click(function(){
-                
+        $(document).on('click','#prev',function(){
+              
             listCounter--;
-            getPlaylist();
-            console.log(listCounter);
+            showPlaylist();
+            
         
         });
     }
