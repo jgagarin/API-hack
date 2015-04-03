@@ -33,6 +33,7 @@ body {
     font-size: 4em;
     font-family: 'Chewy', sans-serif;
     text-align: center;
+    text-shadow: 1px 3px 1px #ff358b;
     margin-bottom: 0;
 }
 .main-header p {
@@ -85,17 +86,25 @@ ul#results-list {
     margin: 0 auto;
     width: 350px;
 }
-
-li i.fa-angle-left{
+li i {
+    color: #fff;
+}
+li i.fa-angle-double-left{
   float: left;
   font-size: 4em;
   position: relative;
   top: 2.5em;
   
 }
-li i.fa-angle-right{
+li i.fa-angle-double-right{
   float: right;
   font-size: 4em;
-  top: -3.25em;
+  top: -4em;
   position: relative;
+}
+
+.caption h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    text-shadow: 1px 1px 1px #ff358b;
 }

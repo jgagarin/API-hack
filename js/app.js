@@ -45,7 +45,7 @@ function getPlaylist(userSearch){
         var playlistTitle = results.playlists.items[0].name;
         
         //posting playlist to page
-        var imagePost = '<li><i class="fa fa-angle-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i class="fa fa-angle-right"></i></li>';
+        var imagePost = '<li><i class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i class="fa fa-angle-double-right"></i></li>';
         $('#results-list').html(imagePost);
     
     });
