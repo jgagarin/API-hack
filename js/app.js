@@ -34,9 +34,18 @@ function getPlaylist(userSearch){
     .done(function(results){
         
         console.log(results);
-        //image request
+        
+        //playlist image
         var playlistImage = results.playlists.items[0].images[1].url;
-        var imagePost = '<li><i class="fa fa-angle-left"></i><figure><div class="playlist-img"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></div><figcaption class="caption"><h3>Playlist Title</h3></figcaption></figure><i class="fa fa-angle-right"></i></li>';
+        
+        //playlist url
+        var playlistUrl = results.playlists.items[0].href;
+        
+        //playlist title
+        var playlistTitle = results.playlists.items[0].name;
+        
+        
+        var imagePost = '<li><i class="fa fa-angle-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i class="fa fa-angle-right"></i></li>';
         $('#results-list').html(imagePost);
     
     });
