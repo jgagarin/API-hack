@@ -27,7 +27,7 @@ function getPlaylist(userSearch){
     //ajax request
     
     var results = $.ajax({
-        url: 'http://api.spotify.com/v1/search',
+        url: 'https://api.spotify.com/v1/search',
         data: params,
         dataType: "json",
         type: "GET",
