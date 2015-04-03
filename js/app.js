@@ -1,5 +1,5 @@
 //global variables
-var searchVal = $('.input-search').val();
+var listCounter = 0;
 
 $(document).ready(function() {
     
@@ -15,6 +15,7 @@ $(document).ready(function() {
         //pass val to function
         getPlaylist(userSearch);
     });
+    nextPlaylist();
 });
 
 
@@ -36,19 +37,37 @@ function getPlaylist(userSearch){
         console.log(results);
         
         //playlist image
-        var playlistImage = results.playlists.items[0].images[1].url;
+        var playlistImage = results.playlists.items[listCounter].images[1].url;
         
         //playlist url
-        var playlistUrl = results.playlists.items[0].external_urls.spotify;
+        var playlistUrl = results.playlists.items[listCounter].external_urls.spotify;
         
         //playlist title
-        var playlistTitle = results.playlists.items[0].name;
+        var playlistTitle = results.playlists.items[listCounter].name;
         
         //posting playlist to page
         var imagePost = '<li><i class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i class="fa fa-angle-double-right"></i></li>';
         $('#results-list').html(imagePost);
     
     });
-
-
+    
+    
 }
+
+ var nextPlaylist = function(){
+     
+        $("#next").click(function(){
+                
+            listCounter++;
+            getPlaylist();
+            console.log(listCounter);
+        
+        });
+        $("#prev").click(function(){
+                
+            listCounter--;
+            getPlaylist();
+            console.log(listCounter);
+        
+        });
+    }

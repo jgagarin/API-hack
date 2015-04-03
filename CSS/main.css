@@ -89,18 +89,25 @@ ul#results-list {
 li i {
     color: #fff;
 }
+li i:hover{
+    color: #333;
+    cursor: pointer;
+    transition: color 0.5s ease-in;
+}
 li i.fa-angle-double-left{
-  float: left;
+
   font-size: 4em;
   position: relative;
   top: 2.5em;
-  
+  z-index: 5;
 }
 li i.fa-angle-double-right{
-  float: right;
+  
   font-size: 4em;
-  top: -4em;
+  top: -4.85em;
+  left: 13.84em;
   position: relative;
+  z-index: 5;    
 }
 
 .caption h3 {
