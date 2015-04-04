@@ -42,6 +42,9 @@ function getPlaylist(userSearch){
         //show current playlist
         showPlaylist();
     
+    })
+    .fail(function(){
+        alert('error');
     });
     
     
