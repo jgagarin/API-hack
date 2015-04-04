@@ -7,6 +7,8 @@ $(document).ready(function() {
     $('.playlist-search').submit(function(event){
         //stop default form submit
         event.preventDefault();
+        //returns counter back to zero
+        listCounter = 0;
         //zero out prev search
         $('.input-search').html('');
         //zero out prev results
@@ -21,6 +23,7 @@ $(document).ready(function() {
 
 
 function getPlaylist(userSearch){
+    
     
     //parameters to be passed
     var params = { q: userSearch, type: 'playlist' };
