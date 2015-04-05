@@ -74,7 +74,19 @@ body {
     color: #fff;
     transition: background 1s ease-in-out;
 }
-
+input[type=text] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 2px solid #aeee00;
+}
+ 
+input[type=text]:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 2px solid rgba(255,255,255, 1);
+}
 
 /* Results Section Styles */
 ul#results-list {
@@ -98,17 +110,21 @@ li i:hover{
 li i.fa-angle-double-left{
 
   font-size: 4em;
-  position: relative;
-  top: 2.5em;
+  position: absolute;
+  top: 12.5em;
   z-index: 5;
 }
 li i.fa-angle-double-right{
   
   font-size: 4em;
-  top: -4.85em;
-  left: 13.84em;
-  position: relative;
+  top: 12.5em;
+  left: 17.05em;
+  position: absolute;
   z-index: 5;    
+}
+
+img:hover{
+    opacity: 0.7;
 }
 
 .caption h3 {
