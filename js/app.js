@@ -64,7 +64,7 @@ var showPlaylist = function(){
         var playlistTitle = listResults.playlists.items[listCounter].name;
         
         //posting playlist to page
-        var imagePost = '<li><i id="prev" class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><h3>' + playlistTitle + '</h3></figcaption></figure><i id="next" class="fa fa-angle-double-right"></i></li>';
+        var imagePost = '<li><i id="prev" class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><a href="'+ playlistUrl + '"><h3>' + playlistTitle + '</h3></a></figcaption></figure><i id="next" class="fa fa-angle-double-right"></i></li>';
         $('#results-list').html(imagePost);
     
     
