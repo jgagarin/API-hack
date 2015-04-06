@@ -55,8 +55,17 @@ function getPlaylist(userSearch){
 
 var showPlaylist = function(){
     
-    var playlistImage = listResults.playlists.items[listCounter].images[1].url;
-        
+    var playlistImage;
+    
+    //check if there's right sized img
+     if ( listResults.playlists.items[listCounter].images.length == 3) {  playlistImage = listResults.playlists.items[listCounter].images[1].url;}
+    
+    else {
+    
+    //assign img url
+     playlistImage = listResults.playlists.items[listCounter].images[0].url;
+    
+    }
         //playlist url
         var playlistUrl = listResults.playlists.items[listCounter].external_urls.spotify;
         
