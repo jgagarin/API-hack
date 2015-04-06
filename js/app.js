@@ -7,21 +7,30 @@ $(document).ready(function() {
     $('.playlist-search').submit(function(event){
         //stop default form submit
         event.preventDefault();
+        
         //returns counter back to zero
         listCounter = 0;
-        //zero out prev search
-        $('.input-search').html('');
+        
         //zero out prev results
-        $('#results-list').html('');
+        $('#results-list').html(' ');
+        
         //grab user value
           var userSearch = $(this).find('input[type="text"]').val();
+        
         //pass val to function
-        getPlaylist(userSearch);
+        getPlaylist(userSearch);        
+       
     });
+    clearSearch();
     nextPlaylist();
 });
 
-
+function clearSearch(){
+    //clears previous search input on focus
+    $('.input-search').on('focus', function(){
+        $(this).val('');
+    });
+}
 function getPlaylist(userSearch){
     
     
@@ -75,6 +84,9 @@ var showPlaylist = function(){
         //posting playlist to page
         var imagePost = '<li><i id="prev" class="fa fa-angle-double-left"></i><figure><div class="playlist-img"><a href="'+ playlistUrl + '"><img src='+'"'+ playlistImage +'"'+' width="300px" height="300px" alt="test" /></a></div><figcaption class="caption"><a href="'+ playlistUrl + '"><h3>' + playlistTitle + '</h3></a></figcaption></figure><i id="next" class="fa fa-angle-double-right"></i></li>';
         $('#results-list').html(imagePost);
+    
+    //scrolls page to results
+         $('body').animate({scrollTop: $('#results-list').offset().top }, 1000);
     
     
     
